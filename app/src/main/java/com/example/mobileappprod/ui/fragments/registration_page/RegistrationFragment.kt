@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.example.mobileappprod.R
 import com.example.mobileappprod.databinding.FragmentIncidentsBinding
 import com.example.mobileappprod.databinding.FragmentRegistrationPageBinding
+import com.example.mobileappprod.ui.activities.MainViewModel
 import com.example.mobileappprod.ui.fragments.incidents_page.IncidentsViewModel
 
 class RegistrationFragment : Fragment() {
@@ -18,6 +20,7 @@ class RegistrationFragment : Fragment() {
     private var _binding: FragmentRegistrationPageBinding? = null
     private val binding get() = _binding!!
     private val vm by viewModels<RegistrationViewModel>()
+    private val mainVm by activityViewModels<MainViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +32,7 @@ class RegistrationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        vm.registerNewUserByEmail("wiktor@test.com", "Tesssst123321!", "Wiktor")
+        mainVm.registerNewUserByEmail("wiktor@test.com", "Tesssst123321!", "Wiktor")
     }
 
     override fun onDestroy() {

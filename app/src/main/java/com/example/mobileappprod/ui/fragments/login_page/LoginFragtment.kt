@@ -6,17 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.example.mobileappprod.R
 import com.example.mobileappprod.databinding.FragmentIncidentsBinding
 import com.example.mobileappprod.databinding.FragmentLoginPageBinding
+import com.example.mobileappprod.ui.activities.MainViewModel
 
 class LoginFragtment : Fragment() {
 
     private var _binding:  FragmentLoginPageBinding? = null
     private val binding get() = _binding!!
     private val vm by viewModels<LoginViewModel>()
-
+    private val mainVm by activityViewModels<MainViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

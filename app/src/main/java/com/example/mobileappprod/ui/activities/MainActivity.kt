@@ -28,8 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val frag = RegistrationFragment()
-        supportFragmentManager.beginTransaction().add(frag, "").commit()
+
 
 
         /*
